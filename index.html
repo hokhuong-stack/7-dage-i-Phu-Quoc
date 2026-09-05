@@ -10,7 +10,6 @@
 
     <h1>Ferie i Phú Quốc 🌴</h1>
 
-    <!-- To-kolonne layout rykket op under overskriften -->
     <div class="indhold-wrapper">
         <!-- Venstre: De 7 faneknapper -->
         <div class="menu-kolonne">
@@ -23,7 +22,7 @@
             <button class="fane-knap" onclick="visDag(event, 'dag7')">Dag 7</button>
         </div>
 
-        <!-- Højre: Programindholdet -->
+        <!-- Højre: Programindhold og musikknap i det tomme felt -->
         <div class="program-kolonne">
             <div id="dag1" class="program-indhold aktiv-indhold">
                 <h2>Dag 1 – Fly + ankomst</h2>
@@ -108,16 +107,14 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Musikafspiller placeret til højre under programmet og over kortet -->
-    <div class="musik-container-bund">
-        <div class="musik-kontrol">
-            <button id="musik-knap" onclick="toggleMusik()">🎵 Tænd musik</button>
-            <audio id="ferie-musik" loop preload="auto">
-                <source src="Musik.mp3" type="audio/mpeg">
-            </audio>
+            <!-- Mindre musikknap placeret under programmet i højre side -->
+            <div class="musik-lokal">
+                <button id="musik-knap" onclick="toggleMusik()">🎵 Musik</button>
+                <audio id="ferie-musik" loop preload="auto">
+                    <source src="Musik.mp3" type="audio/mpeg">
+                </audio>
+            </div>
         </div>
     </div>
 
