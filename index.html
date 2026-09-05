@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <!-- Sikrer at siden fungerer perfekt på mobiltelefoner -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phú Quốc Program</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Ferie i Phú Quốc 🌴</h1>
+
+    <!-- Interaktivt kort -->
+    <div class="kort-container">
+        <img src="image.png" alt="Kort over Phú Quốc" class="oe-kort">
+        
+        <!-- Prikkerne der ligger ovenpå kortet -->
+        <div id="marker-dag2" class="kort-marker roed">2</div>
+        <div id="marker-dag3" class="kort-marker blaa">3</div>
+        <div id="marker-dag4" class="kort-marker gul">4</div>
+        <div id="marker-dag5" class="kort-marker groen">5</div>
+        <div id="marker-dag6" class="kort-marker orange">6</div>
+    </div>
+
+    <!-- De 7 faneknapper -->
+    <div class="fane-menu">
+        <button class="fane-knap aktiv" onclick="visDag(event, 'dag1')">Dag 1</button>
+        <button class="fane-knap" onclick="visDag(event, 'dag2')">Dag 2</button>
+        <button class="fane-knap" onclick="visDag(event, 'dag3')">Dag 3</button>
+        <button class="fane-knap" onclick="visDag(event, 'dag4')">Dag 4</button>
+        <button class="fane-knap" onclick="visDag(event, 'dag5')">Dag 5</button>
+        <button class="fane-knap" onclick="visDag(event, 'dag6')">Dag 6</button>
+        <button class="fane-knap" onclick="visDag(event, 'dag7')">Dag 7</button>
+    </div>
+
+    <!-- Dag 1 -->
+    <div id="dag1" class="program-indhold aktiv-indhold">
+        <h2>Dag 1 – Fly + indkvartering</h2>
+        <div class="program-punkt">
+            <ul>
+                <li>Ankomst</li>
+                <li>Check-in</li>
+                <li>Pool/strand</li>
+                <li>Middag og tidlig aften</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Dag 2 -->
+    <div id="dag2" class="program-indhold" style="display:none;">
+        <h2>Dag 2 – Sao Beach + syd</h2>
+        <div class="program-punkt">
+            <ul>
+                <li>Sao Beach</li>
+                <li>An Thoi</li>
+                <li>Hon Thom-svævebanen</li>
+                <li>Sunset Town ved solnedgang</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Dag 3 -->
+    <div id="dag3" class="program-indhold" style="display:none;">
+        <h2>Dag 3 – Ø-hop 🐠</h2>
+        <div class="program-punkt">
+            <ul>
+                <li>Heldagstur til An Thoi-øerne</li>
+                <li>Snorkling</li>
+                <li>Strand</li>
+                <li>Rolig aften</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Dag 4 -->
+    <div id="dag4" class="program-indhold" style="display:none;">
+        <h2>Dag 4 – Ren feriedag ☀️</h2>
+        <div class="program-punkt">
+            <ul>
+                <li>Ingen planer</li>
+                <li>Pool/strand</li>
+                <li>Massage/spa</li>
+                <li>God middag</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Dag 5 -->
+    <div id="dag5" class="program-indhold" style="display:none;">
+        <h2>Dag 5 – Nordlige Phú Quốc</h2>
+        <div class="program-punkt">
+            <ul>
+                <li>Nationalpark</li>
+                <li>Peberfarm</li>
+                <li>Evt. en strand i nord</li>
+                <li>Tilbage til hotellet om eftermiddagen</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Dag 6 -->
+    <div id="dag6" class="program-indhold" style="display:none;">
+        <h2>Dag 6 – Valgfri dag</h2>
+        <p><em>Her vælges efter vejret:</em></p>
+        <div class="program-punkt">
+            <ul>
+                <li>🌊 Mere strand og afslapning</li>
+                <li>🐠 Ekstra snorkling, hvis dag 3 blev aflyst</li>
+                <li>🛵 Udforske øen på scooter/bil</li>
+                <li>🍜 Night Market + lokal mad</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Dag 7 -->
+    <div id="dag7" class="program-indhold" style="display:none;">
+        <h2>Dag 7 – Hjemrejse ✈️</h2>
+        <div class="program-punkt">
+            <ul>
+                <li>Morgenmad</li>
+                <li>Sidste bad/pool</li>
+                <li>Fly hjem</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Forbinder siden med JavaScript-filen -->
+    <script src="script.js"></script>
+</body>
+</html>
