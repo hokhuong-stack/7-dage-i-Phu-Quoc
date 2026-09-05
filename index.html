@@ -2,7 +2,6 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <!-- Sikrer at siden fungerer perfekt på mobiltelefoner -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phú Quốc Program</title>
     <link rel="stylesheet" href="style.css">
@@ -10,6 +9,14 @@
 <body>
 
     <h1>Ferie i Phú Quốc 🌴</h1>
+
+    <!-- Musikafspiller -->
+    <div class="musik-kontrol">
+        <button id="musik-knap" onclick="toggleMusik()">🎵 Tænd musik</button>
+        <audio id="ferie-musik" loop>
+            <source src="musik.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 
     <!-- Interaktivt kort -->
     <div class="kort-container">
@@ -125,7 +132,6 @@
         </div>
     </div>
 
-    <!-- Forbinder siden med JavaScript-filen -->
     <script src="script.js"></script>
 </body>
 </html>
