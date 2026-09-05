@@ -55,4 +55,10 @@ function visDag(event, dagId) {
             knap.classList.add("spiller");
         }
     }
+
+    // NYT: Får skærmen til at rulle blødt ned til programområdet
+    document.querySelector('.indhold-wrapper').scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+    });
 }
