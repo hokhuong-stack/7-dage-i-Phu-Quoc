@@ -1,7 +1,7 @@
 /* --- 1. GLOBALE INDSTILLINGER --- */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #e5f3f9; /* Lys havblå baggrund */
+    background-color: #e5f3f9;
     color: #333;
     margin: 0;
     padding: 15px;
@@ -14,7 +14,30 @@ h1 {
     font-size: 24px;
 }
 
-/* --- 2. DET INTERAKTIVE KORT --- */
+/* --- 2. MUSIK KONTROL --- */
+.musik-kontrol {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#musik-knap {
+    background-color: #1a4a5e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+#musik-knap.spiller {
+    background-color: #df6158;
+}
+
+/* --- 3. DET INTERAKTIVE KORT --- */
 .kort-container {
     position: relative;
     max-width: 100%;
@@ -29,7 +52,6 @@ h1 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Prikkernes standard-udseende */
 .kort-marker {
     position: absolute;
     width: 26px;
@@ -41,13 +63,12 @@ h1 {
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    opacity: 0.4; /* Halvt gennemsigtig indtil klik */
+    opacity: 0.4;
     transition: all 0.3s ease;
     transform: translate(-50%, -50%);
     border: 2px solid white;
 }
 
-/* Effekten når en prik aktiveres (Lyser op) */
 .kort-marker.lyser-op {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.4);
@@ -55,24 +76,23 @@ h1 {
     z-index: 10;
 }
 
-/* Prikkernes farver */
 .roed { background-color: #df6158; color: #df6158; }
 .blaa { background-color: #4881ba; color: #4881ba; }
 .gul { background-color: #f1b343; color: #f1b343; }
 .groen { background-color: #639c5b; color: #639c5b; }
 .orange { background-color: #f1b343; color: #f1b343; }
 
-/* Placering på kortet - Juster disse procenter så de rammer plet på din fil */
+/* Kort-koordinater - Justeres hvis nødvendigt */
 #marker-dag2 { top: 62%; left: 35%; }
 #marker-dag3 { top: 78%; left: 32%; }
 #marker-dag4 { top: 40%; left: 55%; }
 #marker-dag5 { top: 20%; left: 28%; }
 #marker-dag6 { top: 35%; left: 22%; }
 
-/* --- 3. FANEBLADE (MENU-KNAPPER) --- */
+/* --- 4. FANEBLADE --- */
 .fane-menu {
     display: flex;
-    flex-wrap: wrap; /* Lader knapper rykke ned på næste linje på små skærme */
+    flex-wrap: wrap;
     gap: 8px;
     justify-content: center;
     margin-bottom: 20px;
@@ -92,14 +112,13 @@ h1 {
     transition: background-color 0.2s;
 }
 
-/* Udseende på den knap, der er valgt */
 .fane-knap.aktiv {
     background-color: #1a4a5e;
     color: white;
     border-color: #1a4a5e;
 }
 
-/* --- 4. PROGRAM-INDHOLD (BOKSENE) --- */
+/* --- 5. PROGRAM BOKSE --- */
 .program-indhold {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -113,7 +132,6 @@ h1 {
     margin-bottom: 15px;
 }
 
-/* Fjerner standard prikker og padding fra listerne */
 .program-punkt ul {
     list-style-type: none;
     padding-left: 0;
@@ -126,14 +144,13 @@ h1 {
 }
 
 .program-punkt li:last-child {
-    border-bottom: none; /* Fjerner streg under det sidste punkt */
+    border-bottom: none;
 }
 
-/* Farvekodning af dagene (Baggrund og venstre kant) */
-#dag1 { border-left: 8px solid #7a639d; background-color: #f5f1f9; } /* Lilla */
-#dag2 { border-left: 8px solid #df6158; background-color: #fceeed; } /* Rød */
-#dag3 { border-left: 8px solid #4881ba; background-color: #ecf3f9; } /* Blå */
-#dag4 { border-left: 8px solid #f1b343; background-color: #fdf7ee; } /* Gul */
-#dag5 { border-left: 8px solid #639c5b; background-color: #f0f7ef; } /* Grøn */
-#dag6 { border-left: 8px solid #f1b343; background-color: #fdf7ee; } /* Orange/Gul */
-#dag7 { border-left: 8px solid #7a639d; background-color: #f5f1f9; } /* Lilla */
+#dag1 { border-left: 8px solid #7a639d; background-color: #f5f1f9; }
+#dag2 { border-left: 8px solid #df6158; background-color: #fceeed; }
+#dag3 { border-left: 8px solid #4881ba; background-color: #ecf3f9; }
+#dag4 { border-left: 8px solid #f1b343; background-color: #fdf7ee; }
+#dag5 { border-left: 8px solid #639c5b; background-color: #f0f7ef; }
+#dag6 { border-left: 8px solid #f1b343; background-color: #fdf7ee; }
+#dag7 { border-left: 8px solid #7a639d; background-color: #f5f1f9; }
