@@ -1,0 +1,139 @@
+/* --- 1. GLOBALE INDSTILLINGER --- */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e5f3f9; /* Lys havblå baggrund */
+    color: #333;
+    margin: 0;
+    padding: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: #1a4a5e;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* --- 2. DET INTERAKTIVE KORT --- */
+.kort-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto 20px auto;
+}
+
+.oe-kort {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Prikkernes standard-udseende */
+.kort-marker {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    opacity: 0.4; /* Halvt gennemsigtig indtil klik */
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+    border: 2px solid white;
+}
+
+/* Effekten når en prik aktiveres (Lyser op) */
+.kort-marker.lyser-op {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.4);
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.9), 0 0 20px 8px currentColor;
+    z-index: 10;
+}
+
+/* Prikkernes farver */
+.roed { background-color: #df6158; color: #df6158; }
+.blaa { background-color: #4881ba; color: #4881ba; }
+.gul { background-color: #f1b343; color: #f1b343; }
+.groen { background-color: #639c5b; color: #639c5b; }
+.orange { background-color: #f1b343; color: #f1b343; }
+
+/* Placering på kortet - Juster disse procenter så de rammer plet på din fil */
+#marker-dag2 { top: 62%; left: 35%; }
+#marker-dag3 { top: 78%; left: 32%; }
+#marker-dag4 { top: 40%; left: 55%; }
+#marker-dag5 { top: 20%; left: 28%; }
+#marker-dag6 { top: 35%; left: 22%; }
+
+/* --- 3. FANEBLADE (MENU-KNAPPER) --- */
+.fane-menu {
+    display: flex;
+    flex-wrap: wrap; /* Lader knapper rykke ned på næste linje på små skærme */
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.fane-knap {
+    padding: 12px 15px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+/* Udseende på den knap, der er valgt */
+.fane-knap.aktiv {
+    background-color: #1a4a5e;
+    color: white;
+    border-color: #1a4a5e;
+}
+
+/* --- 4. PROGRAM-INDHOLD (BOKSENE) --- */
+.program-indhold {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.program-indhold h2 {
+    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Fjerner standard prikker og padding fra listerne */
+.program-punkt ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.program-punkt li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.program-punkt li:last-child {
+    border-bottom: none; /* Fjerner streg under det sidste punkt */
+}
+
+/* Farvekodning af dagene (Baggrund og venstre kant) */
+#dag1 { border-left: 8px solid #7a639d; background-color: #f5f1f9; } /* Lilla */
+#dag2 { border-left: 8px solid #df6158; background-color: #fceeed; } /* Rød */
+#dag3 { border-left: 8px solid #4881ba; background-color: #ecf3f9; } /* Blå */
+#dag4 { border-left: 8px solid #f1b343; background-color: #fdf7ee; } /* Gul */
+#dag5 { border-left: 8px solid #639c5b; background-color: #f0f7ef; } /* Grøn */
+#dag6 { border-left: 8px solid #f1b343; background-color: #fdf7ee; } /* Orange/Gul */
+#dag7 { border-left: 8px solid #7a639d; background-color: #f5f1f9; } /* Lilla */
