@@ -6,14 +6,11 @@ function toggleMusik() {
     let knap = document.getElementById("musik-knap");
 
     if (lyd.paused) {
-        lyd.play().then(() => {
-            knap.innerHTML = "🔇 Sluk musik";
-            knap.classList.add("spiller");
-            musikStartet = true;
-            brugerHarKlikketPause = false;
-        }).catch(error => {
-            console.log("Fejl ved afspilning: ", error);
-        });
+        lyd.play();
+        knap.innerHTML = "🔇 Sluk musik";
+        knap.classList.add("spiller");
+        musikStartet = true;
+        brugerHarKlikketPause = false;
     } else {
         lyd.pause();
         knap.innerHTML = "🎵 Tænd musik";
@@ -52,17 +49,14 @@ function visDag(event, dagId) {
         let lyd = document.getElementById("ferie-musik");
         let knap = document.getElementById("musik-knap");
         if (lyd) {
-            lyd.play().then(() => {
-                musikStartet = true;
-                knap.innerHTML = "🔇 Sluk musik";
-                knap.classList.add("spiller");
-            }).catch(e => {
-                console.log("Autoplay blokeret", e);
-            });
+            lyd.play();
+            musikStartet = true;
+            knap.innerHTML = "🔇 Sluk musik";
+            knap.classList.add("spiller");
         }
     }
 
-    // Ruller skærmen blødt ned til toppen af programmet
+    // NYT: Får skærmen til at rulle blødt ned til programområdet
     document.querySelector('.indhold-wrapper').scrollIntoView({ 
         behavior: 'smooth', 
         block: 'start' 
