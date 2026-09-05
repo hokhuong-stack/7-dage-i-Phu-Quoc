@@ -1,4 +1,3 @@
-/* --- GLOBALE INDSTILLINGER --- */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #e5f3f9;
@@ -14,12 +13,11 @@ h1 {
     font-size: 22px;
 }
 
-/* --- TO-KOLONNE LAYOUT --- */
 .indhold-wrapper {
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .menu-kolonne {
@@ -31,32 +29,28 @@ h1 {
 
 .program-kolonne {
     flex: 1;
-}
-
-/* --- MUSIK KONTROL (PLACERET TIL HØJRE UNDER PROGRAMMET) --- */
-.musik-container-bund {
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 15px;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.musik-kontrol {
-    width: calc(100% - 102px); /* Matcher højre kolonnens bredde */
-    text-align: center;
+/* --- MINDRE MUSIKKNAP --- */
+.musik-lokal {
+    text-align: left;
+    padding-left: 5px;
 }
 
 #musik-knap {
     background-color: #1a4a5e;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 20px;
-    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 15px;
+    font-size: 12px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: background-color 0.3s ease;
-    width: 100%;
 }
 
 #musik-knap.spiller {
