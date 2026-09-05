@@ -1,4 +1,4 @@
-/* --- 1. GLOBALE INDSTILLINGER --- */
+/* --- 1. GLOBALE INDSTILLINGER (MOBIL) --- */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #e5f3f9;
@@ -24,38 +24,109 @@ h1 {
     background-color: #1a4a5e;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 25px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: background-color 0.3s ease;
+    width: 80%; /* Gør knappen nem at ramme med tommelfingeren */
 }
 
 #musik-knap.spiller {
     background-color: #df6158;
 }
 
-/* --- 3. DET INTERAKTIVE KORT --- */
+/* --- 3. FANEBLADE (KNAPPER) --- */
+.fane-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.fane-knap {
+    flex: 1 1 calc(33.33% - 8px); /* Sikrer at der kan ligge op til 3 knapper per række */
+    padding: 12px 5px;
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.fane-knap.aktiv {
+    background-color: #1a4a5e;
+    color: white;
+    border-color: #1a4a5e;
+}
+
+/* --- 4. PROGRAM BOKSE --- */
+.program-indhold {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.program-indhold h2 {
+    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.program-punkt ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.program-punkt li {
+    padding: 10px 0; /* Ekstra luft mellem linjerne til mobil-læsning */
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.program-punkt li:last-child {
+    border-bottom: none;
+}
+
+#dag1 { border-left: 8px solid #7a639d; background-color: #f5f1f9; }
+#dag2 { border-left: 8px solid #df6158; background-color: #fceeed; }
+#dag3 { border-left: 8px solid #4881ba; background-color: #ecf3f9; }
+#dag4 { border-left: 8px solid #f1b343; background-color: #fdf7ee; }
+#dag5 { border-left: 8px solid #639c5b; background-color: #f0f7ef; }
+#dag6 { border-left: 8px solid #f1b343; background-color: #fdf7ee; }
+#dag7 { border-left: 8px solid #7a639d; background-color: #f5f1f9; }
+
+/* --- 5. DET INTERAKTIVE KORT (MOBIL OPTIMERET) --- */
+.kort-sektion {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .kort-container {
     position: relative;
-    max-width: 100%;
-    margin: 0 auto 20px auto;
+    width: 100%; /* Kortet udnytter altid hele telefonens bredde */
+    margin: 0;
 }
 
 .oe-kort {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* Prikkerne */
 .kort-marker {
     position: absolute;
-    width: 26px;
-    height: 26px;
+    width: 28px; /* Lidt større så de er nemmere at se på mobil */
+    height: 28px;
     border-radius: 50%;
     color: white;
     font-weight: bold;
@@ -82,75 +153,9 @@ h1 {
 .groen { background-color: #639c5b; color: #639c5b; }
 .orange { background-color: #f1b343; color: #f1b343; }
 
-/* Kort-koordinater - Justeres hvis nødvendigt */
+/* Kort-koordinater */
 #marker-dag2 { top: 62%; left: 35%; }
 #marker-dag3 { top: 78%; left: 32%; }
 #marker-dag4 { top: 40%; left: 55%; }
 #marker-dag5 { top: 20%; left: 28%; }
 #marker-dag6 { top: 35%; left: 22%; }
-
-/* --- 4. FANEBLADE --- */
-.fane-menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.fane-knap {
-    padding: 12px 15px;
-    cursor: pointer;
-    background-color: #fff;
-    color: #555;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    flex-grow: 1;
-    text-align: center;
-    font-weight: bold;
-    font-size: 14px;
-    transition: background-color 0.2s;
-}
-
-.fane-knap.aktiv {
-    background-color: #1a4a5e;
-    color: white;
-    border-color: #1a4a5e;
-}
-
-/* --- 5. PROGRAM BOKSE --- */
-.program-indhold {
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 20px;
-    margin-top: 10px;
-}
-
-.program-indhold h2 {
-    margin-top: 0;
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-.program-punkt ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin: 0;
-}
-
-.program-punkt li {
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.program-punkt li:last-child {
-    border-bottom: none;
-}
-
-#dag1 { border-left: 8px solid #7a639d; background-color: #f5f1f9; }
-#dag2 { border-left: 8px solid #df6158; background-color: #fceeed; }
-#dag3 { border-left: 8px solid #4881ba; background-color: #ecf3f9; }
-#dag4 { border-left: 8px solid #f1b343; background-color: #fdf7ee; }
-#dag5 { border-left: 8px solid #639c5b; background-color: #f0f7ef; }
-#dag6 { border-left: 8px solid #f1b343; background-color: #fdf7ee; }
-#dag7 { border-left: 8px solid #7a639d; background-color: #f5f1f9; }
