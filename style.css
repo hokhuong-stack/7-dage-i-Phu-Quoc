@@ -1,20 +1,20 @@
-/* --- 1. GLOBALE INDSTILLINGER (MOBIL) --- */
+/* --- GLOBALE INDSTILLINGER --- */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #e5f3f9;
     color: #333;
     margin: 0;
-    padding: 15px;
+    padding: 10px;
 }
 
 h1 {
     text-align: center;
     color: #1a4a5e;
-    margin-bottom: 20px;
-    font-size: 24px;
+    margin-bottom: 15px;
+    font-size: 22px;
 }
 
-/* --- 2. MUSIK KONTROL --- */
+/* --- MUSIK KONTROL --- */
 .musik-kontrol {
     text-align: center;
     margin-bottom: 20px;
@@ -31,23 +31,37 @@ h1 {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: background-color 0.3s ease;
-    width: 80%; /* Gør knappen nem at ramme med tommelfingeren */
+    width: 80%;
 }
 
 #musik-knap.spiller {
     background-color: #df6158;
 }
 
-/* --- 3. FANEBLADE (KNAPPER) --- */
-.fane-menu {
+/* --- TO-KOLONNE LAYOUT (MOBIL) --- */
+.indhold-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 15px;
+    gap: 12px; /* Afstand mellem knapper og program */
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
+/* Venstre kolonne */
+.menu-kolonne {
+    flex: 0 0 90px; /* Fast smal bredde til knapperne */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Højre kolonne */
+.program-kolonne {
+    flex: 1; /* Tager resten af pladsen */
+}
+
+/* --- FANEBLADE (KNAPPER) --- */
 .fane-knap {
-    flex: 1 1 calc(33.33% - 8px); /* Sikrer at der kan ligge op til 3 knapper per række */
+    width: 100%;
     padding: 12px 5px;
     background-color: #fff;
     color: #555;
@@ -55,7 +69,7 @@ h1 {
     border-radius: 8px;
     text-align: center;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px; /* Lidt mindre tekst for at passe i kolonnen */
 }
 
 .fane-knap.aktiv {
@@ -64,28 +78,29 @@ h1 {
     border-color: #1a4a5e;
 }
 
-/* --- 4. PROGRAM BOKSE --- */
+/* --- PROGRAM BOKSE --- */
 .program-indhold {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 15px;
 }
 
 .program-indhold h2 {
     margin-top: 0;
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 17px; /* Tilpasset mobil */
+    margin-bottom: 12px;
+    line-height: 1.2;
 }
 
 .program-punkt ul {
     list-style-type: none;
     padding-left: 0;
     margin: 0;
+    font-size: 14px;
 }
 
 .program-punkt li {
-    padding: 10px 0; /* Ekstra luft mellem linjerne til mobil-læsning */
+    padding: 8px 0;
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
@@ -93,24 +108,23 @@ h1 {
     border-bottom: none;
 }
 
-#dag1 { border-left: 8px solid #7a639d; background-color: #f5f1f9; }
-#dag2 { border-left: 8px solid #df6158; background-color: #fceeed; }
-#dag3 { border-left: 8px solid #4881ba; background-color: #ecf3f9; }
-#dag4 { border-left: 8px solid #f1b343; background-color: #fdf7ee; }
-#dag5 { border-left: 8px solid #639c5b; background-color: #f0f7ef; }
-#dag6 { border-left: 8px solid #f1b343; background-color: #fdf7ee; }
-#dag7 { border-left: 8px solid #7a639d; background-color: #f5f1f9; }
+#dag1 { border-left: 6px solid #7a639d; background-color: #f5f1f9; }
+#dag2 { border-left: 6px solid #df6158; background-color: #fceeed; }
+#dag3 { border-left: 6px solid #4881ba; background-color: #ecf3f9; }
+#dag4 { border-left: 6px solid #f1b343; background-color: #fdf7ee; }
+#dag5 { border-left: 6px solid #639c5b; background-color: #f0f7ef; }
+#dag6 { border-left: 6px solid #f1b343; background-color: #fdf7ee; }
+#dag7 { border-left: 6px solid #7a639d; background-color: #f5f1f9; }
 
-/* --- 5. DET INTERAKTIVE KORT (MOBIL OPTIMERET) --- */
+/* --- DET INTERAKTIVE KORT --- */
 .kort-sektion {
     width: 100%;
-    margin-top: 20px;
     text-align: center;
 }
 
 .kort-container {
     position: relative;
-    width: 100%; /* Kortet udnytter altid hele telefonens bredde */
+    width: 100%;
     margin: 0;
 }
 
@@ -122,18 +136,17 @@ h1 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Prikkerne */
 .kort-marker {
     position: absolute;
-    width: 28px; /* Lidt større så de er nemmere at se på mobil */
-    height: 28px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     color: white;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 13px;
     opacity: 0.4;
     transition: all 0.3s ease;
     transform: translate(-50%, -50%);
