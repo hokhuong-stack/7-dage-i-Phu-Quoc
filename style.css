@@ -29,20 +29,18 @@ h1 {
 
 .program-kolonne {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-/* --- MUSIKKNAP STIL & PLACERING --- */
-.musik-center-lokal {
-    text-align: center;
-    margin-top: 15px;
+/* --- MINDRE MUSIKKNAP --- */
+.musik-lokal {
+    text-align: left;
+    padding-left: 5px;
 }
 
-.musik-side-lokal {
-    margin-top: 10px;
-    text-align: center;
-}
-
-#musik-knap, .musik-knap-stil {
+#musik-knap {
     background-color: #1a4a5e;
     color: white;
     border: none;
@@ -55,7 +53,7 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-#musik-knap.spiller, .musik-knap-stil.spiller {
+#musik-knap.spiller {
     background-color: #df6158;
 }
 
