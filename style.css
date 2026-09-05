@@ -14,49 +14,53 @@ h1 {
     font-size: 22px;
 }
 
-/* --- MUSIK KONTROL --- */
+/* --- TO-KOLONNE LAYOUT --- */
+.indhold-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.menu-kolonne {
+    flex: 0 0 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.program-kolonne {
+    flex: 1;
+}
+
+/* --- MUSIK KONTROL (PLACERET TIL HØJRE UNDER PROGRAMMET) --- */
+.musik-container-bund {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
 .musik-kontrol {
+    width: calc(100% - 102px); /* Matcher højre kolonnens bredde */
     text-align: center;
-    margin-bottom: 20px;
 }
 
 #musik-knap {
     background-color: #1a4a5e;
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: background-color 0.3s ease;
-    width: 80%;
+    width: 100%;
 }
 
 #musik-knap.spiller {
     background-color: #df6158;
-}
-
-/* --- TO-KOLONNE LAYOUT (MOBIL) --- */
-.indhold-wrapper {
-    display: flex;
-    gap: 12px; /* Afstand mellem knapper og program */
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
-
-/* Venstre kolonne */
-.menu-kolonne {
-    flex: 0 0 90px; /* Fast smal bredde til knapperne */
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-/* Højre kolonne */
-.program-kolonne {
-    flex: 1; /* Tager resten af pladsen */
 }
 
 /* --- FANEBLADE (KNAPPER) --- */
@@ -69,7 +73,7 @@ h1 {
     border-radius: 8px;
     text-align: center;
     font-weight: bold;
-    font-size: 13px; /* Lidt mindre tekst for at passe i kolonnen */
+    font-size: 13px;
 }
 
 .fane-knap.aktiv {
@@ -87,7 +91,7 @@ h1 {
 
 .program-indhold h2 {
     margin-top: 0;
-    font-size: 17px; /* Tilpasset mobil */
+    font-size: 17px;
     margin-bottom: 12px;
     line-height: 1.2;
 }
@@ -166,7 +170,6 @@ h1 {
 .groen { background-color: #639c5b; color: #639c5b; }
 .orange { background-color: #f1b343; color: #f1b343; }
 
-/* Kort-koordinater */
 #marker-dag2 { top: 62%; left: 35%; }
 #marker-dag3 { top: 78%; left: 32%; }
 #marker-dag4 { top: 40%; left: 55%; }
