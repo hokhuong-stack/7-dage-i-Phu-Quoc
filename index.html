@@ -14,20 +14,9 @@
     <div class="musik-kontrol">
         <button id="musik-knap" onclick="toggleMusik()">🎵 Tænd musik</button>
         <audio id="ferie-musik" loop>
-            <source src="musik.mp3" type="audio/mpeg">
+            <!-- Sørg for at filnavnet matcher præcis (f.eks. Musik.mp3 med stort M) -->
+            <source src="Musik.mp3" type="audio/mpeg">
         </audio>
-    </div>
-
-    <!-- Interaktivt kort -->
-    <div class="kort-container">
-        <img src="image.png" alt="Kort over Phú Quốc" class="oe-kort">
-        
-        <!-- Prikkerne der ligger ovenpå kortet -->
-        <div id="marker-dag2" class="kort-marker roed">2</div>
-        <div id="marker-dag3" class="kort-marker blaa">3</div>
-        <div id="marker-dag4" class="kort-marker gul">4</div>
-        <div id="marker-dag5" class="kort-marker groen">5</div>
-        <div id="marker-dag6" class="kort-marker orange">6</div>
     </div>
 
     <!-- De 7 faneknapper -->
@@ -129,6 +118,20 @@
                 <li>Sidste bad/pool</li>
                 <li>Fly hjem</li>
             </ul>
+        </div>
+    </div>
+
+    <!-- Interaktivt kort centreret i bunden -->
+    <div class="kort-sektion">
+        <div class="kort-container">
+            <img src="image.png" alt="Kort over Phú Quốc" class="oe-kort">
+            
+            <!-- Prikkerne der ligger ovenpå kortet -->
+            <div id="marker-dag2" class="kort-marker roed">2</div>
+            <div id="marker-dag3" class="kort-marker blaa">3</div>
+            <div id="marker-dag4" class="kort-marker gul">4</div>
+            <div id="marker-dag5" class="kort-marker groen">5</div>
+            <div id="marker-dag6" class="kort-marker orange">6</div>
         </div>
     </div>
 
