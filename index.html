@@ -20,17 +20,9 @@
             <button class="fane-knap" onclick="visDag(event, 'dag5')">Dag 5</button>
             <button class="fane-knap" onclick="visDag(event, 'dag6')">Dag 6</button>
             <button class="fane-knap" onclick="visDag(event, 'dag7')">Dag 7</button>
-
-            <!-- Musikknap placeret under Dag 6 og 7 i venstre kolonne -->
-            <div class="musik-side-lokal">
-                <button id="musik-knap" onclick="toggleMusik()">🎵 Musik</button>
-                <audio id="ferie-musik" loop preload="auto">
-                    <source src="Musik.mp3" type="audio/mpeg">
-                </audio>
-            </div>
         </div>
 
-        <!-- Højre: Programindhold -->
+        <!-- Højre: Programindhold og musikknap i det tomme felt -->
         <div class="program-kolonne">
             <div id="dag1" class="program-indhold aktiv-indhold">
                 <h2>Dag 1 – Fly + ankomst</h2>
@@ -41,10 +33,6 @@
                         <li>Pool/strand</li>
                         <li>Middag og tidlig aften</li>
                     </ul>
-                </div>
-                <!-- Musikknap centreret i bunden af programmet -->
-                <div class="musik-center-lokal">
-                    <button id="musik-knap-2" class="musik-knap-stil" onclick="toggleMusik()">🎵 Musik</button>
                 </div>
             </div>
 
@@ -58,9 +46,6 @@
                         <li>Sunset Town ved solnedgang</li>
                     </ul>
                 </div>
-                <div class="musik-center-lokal">
-                    <button class="musik-knap-stil" onclick="toggleMusik()">🎵 Musik</button>
-                </div>
             </div>
 
             <div id="dag3" class="program-indhold" style="display:none;">
@@ -72,9 +57,6 @@
                         <li>Strand</li>
                         <li>Rolig aften</li>
                     </ul>
-                </div>
-                <div class="musik-center-lokal">
-                    <button class="musik-knap-stil" onclick="toggleMusik()">🎵 Musik</button>
                 </div>
             </div>
 
@@ -88,9 +70,6 @@
                         <li>God middag</li>
                     </ul>
                 </div>
-                <div class="musik-center-lokal">
-                    <button class="musik-knap-stil" onclick="toggleMusik()">🎵 Musik</button>
-                </div>
             </div>
 
             <div id="dag5" class="program-indhold" style="display:none;">
@@ -102,9 +81,6 @@
                         <li>Evt. strand i nord</li>
                         <li>Tilbage om eftermiddagen</li>
                     </ul>
-                </div>
-                <div class="musik-center-lokal">
-                    <button class="musik-knap-stil" onclick="toggleMusik()">🎵 Musik</button>
                 </div>
             </div>
 
@@ -119,9 +95,6 @@
                         <li>🍜 Night Market</li>
                     </ul>
                 </div>
-                <div class="musik-center-lokal">
-                    <button class="musik-knap-stil" onclick="toggleMusik()">🎵 Musik</button>
-                </div>
             </div>
 
             <div id="dag7" class="program-indhold" style="display:none;">
@@ -133,9 +106,14 @@
                         <li>Fly hjem</li>
                     </ul>
                 </div>
-                <div class="musik-center-lokal">
-                    <button class="musik-knap-stil" onclick="toggleMusik()">🎵 Musik</button>
-                </div>
+            </div>
+
+            <!-- Mindre musikknap placeret under programmet i højre side -->
+            <div class="musik-lokal">
+                <button id="musik-knap" onclick="toggleMusik()">🎵 Musik</button>
+                <audio id="ferie-musik" loop preload="auto">
+                    <source src="Musik.mp3" type="audio/mpeg">
+                </audio>
             </div>
         </div>
     </div>
